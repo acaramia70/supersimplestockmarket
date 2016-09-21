@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- ====================================================================== -->
+<!-- === BUILD.XML                                                      === -->
+<!-- ====================================================================== -->
+<project name="SuperSimpleStockMarket" basedir=".">
+
+	<!-- ================================================================== -->
+	<!-- === Properties                                                 === -->
+	<!-- ================================================================== -->
+	<property file="build.properties" />
+
+
+	<!-- ================================================================== -->
+	<!-- === JAR.SUPERSIMPLESTOCKMARKET                                 === -->
+	<!-- ================================================================== -->
+	<target name="JAR.SUPERSIMPLESTOCKMARKET">
+		<mkdir dir="${jar.dir}" />
+		<delete file="${jar.dir}/${jar.app.name}.jar" />
+		<jar destfile="${jar.dir}/${jar.app.name}.jar" basedir="${classes.dir}" excludes=".*,build.*,jar/*,lib/*" compress="true">
+			<manifest>
+				<attribute name="Main-Class" value="${jar.app.name}" />
+			</manifest>
+		</jar>
+
+	</target>
+
+</project>
